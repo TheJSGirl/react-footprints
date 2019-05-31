@@ -3,7 +3,7 @@ import './Ball.css';
 
 class Ball extends Component {
     render() {
-        return <div className="Ball">{this.props.num}</div>
+        return <div className="Ball">{this.props.nums}</div>
     }
 }
 
