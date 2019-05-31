@@ -1,0 +1,24 @@
+.Lottery {
+    text-align: center;
+    margin-top: 10em;
+}
+.Lottery-heading {
+    font-size: 2em;
+    font: bold;
+    color: rgb(66, 184, 221);
+}
+
+.Lottery-button {
+    margin-top: 1.5em;
+    width: 20em;  height: 3em;
+    border: 2px black solid;
+    color: white;
+    font-size: 1em;
+    font: bold;
+    background: rgb(66, 184, 221); /* this is a light blue */
+  }
+
+  .Lottery-balls {
+      padding: -1em
+  }
+  

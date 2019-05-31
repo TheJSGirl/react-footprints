@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Ball from './Ball';
+import './Lottery.css';
 
 class Lottery extends Component {
     static defaultProps = {
@@ -28,12 +29,12 @@ class Lottery extends Component {
 
     render() {
         return (
-            <section>
-                <h1>{this.props.title}</h1>
-                <div> 
+            <section className="Lottery">
+                <h1 className="Lottery-heading">{this.props.title}</h1>
+                <div className="Lottery-balls"> 
                     {this.state.nums.map(b => <Ball nums={b} />)}
                 </div>  
-                <button onClick={this.handleClick}>Generate</button>          
+                <button className="Lottery-button" onClick={this.handleClick}>Generate</button>          
             </section>
         )
     }
