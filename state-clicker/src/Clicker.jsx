@@ -12,7 +12,7 @@ class Clicker extends Component {
     }
 
     handleEvent = () => {
-        const randomNumber = Math.floor(Math.random()*10)+1;
+        const randomNumber = Math.floor(Math.random()*20)+1;
         this.setState({num:randomNumber});
     }
 

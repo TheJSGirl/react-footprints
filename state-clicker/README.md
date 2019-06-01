@@ -9,4 +9,4 @@
 ![](clicker2.png)
 
 # App Video
-!video[ title ](clicker.webm)
+![Video Link](./clicker.gif?v=4&s=500)
