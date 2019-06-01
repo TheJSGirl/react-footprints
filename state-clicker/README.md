@@ -10,7 +10,7 @@
 
 # App Video
 <figure class="video_container">
-  <video controls="true" allowfullscreen="true">
+  <video controls="true" allowfullscreen="true" poster="">
     <source src="clicker.webm" type="video/webm">
   </video>
 </figure>
