@@ -9,4 +9,8 @@
 ![](clicker2.png)
 
 # App Video
-!video[ title ](clicker.webm)
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true" poster="https://img.youtube.com/vi/CD-E-LDc384/default.jpg">
+    <source src="clicker.webm" type="video/webm">
+  </video>
+</figure>
