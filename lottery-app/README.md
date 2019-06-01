@@ -8,3 +8,11 @@
 
 ### Output of the App
  ![Image](lottery.png)
+
+### How to run this app ?
+- Clone this repo
+- Install all packages ```npm i```
+- Run the start script ```npm start```
+
+#### Note
+It supports node v10
