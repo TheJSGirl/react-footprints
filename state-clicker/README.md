@@ -5,8 +5,9 @@
 - if random click is 7 user is won.
 
 # Output of the App
-![](clicker1.png)
-![](clicker2.png)
+<img src="./clicker1.png" width="400">
+<img src="./clicker2.png" width="400">
+
 
 # App Video
 ![Video Link](./clicker.gif?v=4&s=500)
