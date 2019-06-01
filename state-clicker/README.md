@@ -9,8 +9,4 @@
 ![](clicker2.png)
 
 # App Video
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true" poster="">
-    <source src="clicker.webm" type="video/webm">
-  </video>
-</figure>
+[![Video Link](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCzE9UZ8_tk9saVZNuf9mL6BurccA8TQOO3-WAgNaWMHKcvMbz)](./clicker.webm)
