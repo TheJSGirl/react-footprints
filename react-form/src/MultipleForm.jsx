@@ -24,22 +24,26 @@ class MultiForm extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="name">Name</label>
                     <input 
-                        placeholder="name"
                         name="name"
                         type="text"
                         value={this.state.name}
                         onChange={this.handleChange}
                     />
+
+                    <label htmlFor="username">Username</label>
+
                     <input
-                        placeholder="username"
                         name="username"
                         type="text"
                         value={this.state.username}
                         onChange={this.handleChange}
                     />
+
+                    <label htmlFor="password">Password</label>
+
                     <input
-                        placeholder="password"
                         name="password"
                         type="password"
                         value={this.state.password}
