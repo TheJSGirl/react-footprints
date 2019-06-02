@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 
 class Box extends Component {
-    static defaultProps = {
-        height: 10,
-        width: 15,
-        color: 'red'
-    }
+    // static defaultProps = {
+    //     height: 10,
+    //     width: 15,
+    //     color: 'red'
+    // }
     render() {
         return(
             <div style={{
