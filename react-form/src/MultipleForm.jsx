@@ -27,6 +27,7 @@ class MultiForm extends Component {
                     <label htmlFor="name">Name</label>
                     <input 
                         name="name"
+                        id="name"
                         type="text"
                         value={this.state.name}
                         onChange={this.handleChange}
@@ -36,6 +37,7 @@ class MultiForm extends Component {
 
                     <input
                         name="username"
+                        id="username"
                         type="text"
                         value={this.state.username}
                         onChange={this.handleChange}
@@ -45,6 +47,7 @@ class MultiForm extends Component {
 
                     <input
                         name="password"
+                        id="password"
                         type="password"
                         value={this.state.password}
                         onChange={this.handleChange}
