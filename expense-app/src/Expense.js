@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Remove from './Delete';
-
+import './Expense.css'
 
 class Expense extends Component {
 
@@ -9,9 +9,9 @@ class Expense extends Component {
     }
 
     render() {
-        console.log(this.props)
-        return(<div>
-            <p>{this.props.text}</p><Remove />
+        return(<div className="Expense">
+            <p >{this.props.text}</p>
+            <Remove remove={this.props.remove} />
         </div>)
     }
 }
