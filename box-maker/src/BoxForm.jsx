@@ -22,7 +22,7 @@ class BoxForm extends Component {
     }
     render() {
         return (
-                <form onClick={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                    <div>
                         <label htmlFor="height">Height</label>
                         <input
