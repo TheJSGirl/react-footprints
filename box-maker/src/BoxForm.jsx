@@ -7,7 +7,7 @@ class BoxForm extends Component {
         this.state = {
             width: '',
             height: '',
-            color: ''
+            color: '',
         }
         this.handleOnchange = this.handleOnchange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,6 +28,8 @@ class BoxForm extends Component {
         })  
     }
     render() {
+        const {height, width, color} = this.state;
+        const enabled = height && width && color;
         return (
                 <form onSubmit={this.handleSubmit}>
                    <div>
@@ -38,7 +40,6 @@ class BoxForm extends Component {
                             value={this.state.height}
                             onChange={this.handleOnchange}
                         />
-                       
                     </div><br/>
 
                     <div>
@@ -61,7 +62,7 @@ class BoxForm extends Component {
                         />
                    </div>
                     <br/>
-                    <button>Create Box</button>
+                    <button disabled={!enabled}>Create Box</button>
                 </form>
         )
     }

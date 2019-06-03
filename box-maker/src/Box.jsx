@@ -6,10 +6,6 @@ class Box extends Component {
         width: 15,
         color: 'red'
     }
-    constructor(props) {
-        super(props);
-    }
-
 
     render() {
         return(
