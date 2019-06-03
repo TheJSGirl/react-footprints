@@ -6,6 +6,11 @@ class Box extends Component {
         width: 15,
         color: 'red'
     }
+    constructor(props) {
+        super(props);
+    }
+
+
     render() {
         return(
             <div style={{
@@ -13,6 +18,7 @@ class Box extends Component {
                 width: `${this.props.width}em`,
                 background: this.props.color
             }}>
+                <button onClick={this.props.removeBox}>X</button>
             </div>
         )
     }
