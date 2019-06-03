@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import './Box.css';
 
 class Box extends Component {
     static defaultProps = {
@@ -6,15 +7,17 @@ class Box extends Component {
         width: 15,
         color: 'red'
     }
-
+  
     render() {
         return(
-            <div style={{
+            <div   className="Box">
+                <div style={{
                 height:`${this.props.height}em`,
                 width: `${this.props.width}em`,
                 background: this.props.color
-            }}>
+                }}>
                 <button onClick={this.props.removeBox}>X</button>
+                </div>
             </div>
         )
     }
