@@ -14,8 +14,8 @@ class Form extends Component {
 
     handleOnChange(event){
         this.setState({[event.target.name]:event.target.value});
-
     }
+
 
     handleSubmit(event) {
         event.preventDefault();
@@ -23,10 +23,11 @@ class Form extends Component {
         this.props.create(newExpense);
         this.setState({
             text:''
-        })
+        });
     }
 
     render() {
+        const enabled = this.state.text;
         return (
             <form onSubmit={this.handleSubmit}>
                 <div>
@@ -34,10 +35,10 @@ class Form extends Component {
                     <input 
                         type="text"
                         name="text"
-                        value={this.state.expense}
+                        value={this.state.text}
                         onChange={this.handleOnChange}
                     /> &nbsp;&nbsp;
-                    <button >add</button>
+                    <button disabled={!enabled}>add</button>
 
                 </div>
             </form>
