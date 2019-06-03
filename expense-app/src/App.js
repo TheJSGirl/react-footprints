@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
-import Form from './Form';
+import ExpenseList from './ExpenseList';
+import Expense from './Expense';
 
 function App() {
   return (
     <div className="App">
       <h1>Add Your Expenses</h1>
-      <Form />
+      <ExpenseList/>
+
+
     </div>
   );
 }
