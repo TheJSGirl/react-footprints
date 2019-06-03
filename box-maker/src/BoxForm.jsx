@@ -9,7 +9,7 @@ class BoxForm extends Component {
             color: ''
         }
         this.handleOnchange = this.handleOnchange.bind(this);
-        this.handleSubmit = this.handleOnchange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleOnchange(event) {
@@ -22,7 +22,7 @@ class BoxForm extends Component {
     }
     render() {
         return (
-                <form onSubmit={this.handleSubmit}>
+                <form onClick={this.handleSubmit}>
                    <div>
                         <label htmlFor="height">Height</label>
                         <input
