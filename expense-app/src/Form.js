@@ -1,13 +1,15 @@
 import React,{Component} from 'react';
+import uuid from 'uuid';
 
 class Form extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            expense : ''
+            text : ''
         }
         this.handleOnChange = this.handleOnChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleOnChange(event){
@@ -15,18 +17,27 @@ class Form extends Component {
 
     }
 
+    handleSubmit(event) {
+        event.preventDefault();
+        const newExpense = {...this.state, id: uuid()};
+        this.props.create(newExpense);
+        this.setState({
+            text:''
+        })
+    }
+
     render() {
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <div>
                     <label>Add expense</label>
                     <input 
                         type="text"
-                        name="expense"
+                        name="text"
                         value={this.state.expense}
                         onChange={this.handleOnChange}
                     /> &nbsp;&nbsp;
-                <button>Save</button>
+                    <button >add</button>
 
                 </div>
             </form>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import ExpenseList from './ExpenseList';
-import Expense from './Expense';
+// import Expense from './Expense';
 
 function App() {
   return (
