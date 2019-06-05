@@ -19,7 +19,7 @@ class App extends Component {
         </nav>
         <Switch>
           <Route exact path="/" component={() => <About name="Akriti"/>}/>
-          <Route exact path="/dog" component={Dog}/>
+          <Route exact path="/dog/:name" render={(routeProp) => <Dog name={routeProp.match.params.name}/>}/>
           <Route exact path="/contact" render={() => <Contact country="india"/>}/>
         </Switch>
     </div>
