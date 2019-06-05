@@ -23,6 +23,11 @@
   color: #61dafb;
 }
 
+.active-link {
+  color: pink;
+  border-bottom: 1px solid red;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
