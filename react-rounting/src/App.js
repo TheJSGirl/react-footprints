@@ -18,9 +18,9 @@ class App extends Component {
           <NavLink exact activeLink="active-link" to="/dog">Dog</NavLink>
         </nav>
         <Switch>
-          <Route exact path="/" component={About}/>
+          <Route exact path="/" component={() => <About name="Akriti"/>}/>
           <Route exact path="/dog" component={Dog}/>
-          <Route exact path="/contact" component={Contact}/>
+          <Route exact path="/contact" render={() => <Contact country="india"/>}/>
         </Switch>
     </div>
     )
