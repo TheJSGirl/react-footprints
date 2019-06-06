@@ -13,13 +13,13 @@ class App extends Component {
     return (
       <div className="App">
         <nav className="App-nav"> 
-          <NavLink exact activeLink="active-link" to="/">About</NavLink>
-          <NavLink exact activeLink="active-link" to="/contact">Contact</NavLink>
-          <NavLink exact activeLink="active-link" to="/dog">Dog</NavLink>
+          <NavLink exact activeClassName="active-link" to="/">About</NavLink>
+          <NavLink exact activeClassName="active-link" to="/contact">Contact</NavLink>
+          <NavLink exact activeClassName="active-link" to="/dog">Dog</NavLink>
         </nav>
         <Switch>
           <Route exact path="/" component={() => <About name="Akriti"/>}/>
-          <Route exact path="/dog/:name" render={(routeProp) => <Dog name={routeProp.match.params.name}/>}/>
+          <Route exact path="/dog/:name" render={(routeProp) => <Dog name={routeProp.match.params.name} />}/>
           <Route exact path="/contact" render={() => <Contact country="india"/>}/>
         </Switch>
     </div>
