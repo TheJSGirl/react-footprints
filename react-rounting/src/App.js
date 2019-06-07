@@ -5,6 +5,7 @@ import {Route, Switch, NavLink} from 'react-router-dom';
 import Dog from './components/Dog/Dog';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
+import Animal from './components/Animal/Animal';
 
 class App extends Component {
 
@@ -16,11 +17,13 @@ class App extends Component {
           <NavLink exact activeClassName="active-link" to="/">About</NavLink>
           <NavLink exact activeClassName="active-link" to="/contact">Contact</NavLink>
           <NavLink exact activeClassName="active-link" to="/dog">Dog</NavLink>
+          <NavLink exact activeClassName="active-link" to="/animal">Animal</NavLink>
         </nav>
         <Switch>
           <Route exact path="/" component={() => <About name="Akriti"/>}/>
           <Route exact path="/dog/:name" render={(routeProp) => <Dog name={routeProp.match.params.name} />}/>
           <Route exact path="/contact" render={() => <Contact country="india"/>}/>
+          <Route exact path="/animal/:name" render={(routeProp) => <Animal name={routeProp.match.params.name}/>}/>
         </Switch>
     </div>
     )
