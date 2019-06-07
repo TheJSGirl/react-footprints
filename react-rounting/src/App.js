@@ -16,13 +16,15 @@ class App extends Component {
           <NavLink exact activeClassName="active-link" to="/">About</NavLink>
           <NavLink exact activeClassName="active-link" to="/contact">Contact</NavLink>
           <NavLink exact activeClassName="active-link" to="/dog">Dog</NavLink>
-          <NavLink exact activeClassName="active-link" to="/animal">Animal</NavLink>
+          {/* <NavLink exact activeClassName="active-link" to="/animal">Animal</NavLink> */}
+          <NavLink exact activeClassName="active-link" to="/catanimal/:cat/doganimal/:dog">Animal</NavLink>
         </nav>
         <Switch>
           <Route exact path="/" component={() => <About name="Akriti"/>}/>
           <Route exact path="/dog/:name" render={(routeProp) => <Dog name={routeProp.match.params.name} />}/>
           <Route exact path="/contact" render={() => <Contact country="india"/>}/>
-          <Route exact path="/animal/:name" render={(routeProp) => <Animal  {...routeProp}/>}/>
+          {/* <Route exact path="/animal/:name" render={(routeProp) => <Animal  {...routeProp}/>}/> */}
+          <Route exact path="/catanimal/:cat/doganimal/:dog" render={(routeProp) => <Animal  {...routeProp}/>}/>
         </Switch>
     </div>
     )
