@@ -9,7 +9,6 @@ import Animal from './components/Animal/Animal';
 
 class App extends Component {
 
-
   render() {
     return (
       <div className="App">
@@ -23,7 +22,7 @@ class App extends Component {
           <Route exact path="/" component={() => <About name="Akriti"/>}/>
           <Route exact path="/dog/:name" render={(routeProp) => <Dog name={routeProp.match.params.name} />}/>
           <Route exact path="/contact" render={() => <Contact country="india"/>}/>
-          <Route exact path="/animal/:name" render={(routeProp) => <Animal name={routeProp.match.params.name}/>}/>
+          <Route exact path="/animal/:name" render={(routeProp) => <Animal  {...routeProp}/>}/>
         </Switch>
     </div>
     )
