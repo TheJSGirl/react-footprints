@@ -25,6 +25,8 @@ class App extends Component {
           <Route exact path="/contact" render={() => <Contact country="india"/>}/>
           {/* <Route exact path="/animal/:name" render={(routeProp) => <Animal  {...routeProp}/>}/> */}
           <Route exact path="/catanimal/:cat/doganimal/:dog" render={(routeProp) => <Animal  {...routeProp}/>}/>
+          <Route render={() => <h1>Page Not Found</h1>}/>
+
         </Switch>
     </div>
     )
