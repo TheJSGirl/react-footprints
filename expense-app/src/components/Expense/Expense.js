@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Remove from '../Delete/Delete';
+import Edit from '../Edit/Edit';
 import './Expense.css'
 
 class Expense extends Component {
@@ -9,10 +10,14 @@ class Expense extends Component {
     }
 
     render() {
-        return(<div className="Expense">
-            <p >{this.props.text}</p>
-            <Remove remove={this.props.remove} />
-        </div>)
+        return (
+            <div className="Expense">
+           <p >{this.props.text}</p>
+            <Remove remove={this.props.remove}/>
+           <Edit text={this.props.text}/>
+         </div>
+
+        )
     }
 }
 

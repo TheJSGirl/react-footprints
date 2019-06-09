@@ -7,9 +7,10 @@ class ExpenseList extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            expenses: []
+            expenses: [],
         }
         this.create = this.create.bind(this);
+        this.edit = this.edit.bind(this);
     }
 
     create(newExpense) {
@@ -22,6 +23,16 @@ class ExpenseList extends Component {
         this.setState({
             expenses: this.state.expenses.filter(e => e.id !== id)
         })
+    }
+    edit() {
+        this.setState({isEdiditng: true})
+        return (
+            <div>
+                <form>
+                    <input type="text"/>
+                </form>
+            </div>
+        )
     }
 
     render() {
