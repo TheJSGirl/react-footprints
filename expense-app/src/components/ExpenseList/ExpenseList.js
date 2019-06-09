@@ -10,6 +10,7 @@ class ExpenseList extends Component {
             expenses: [],
         }
         this.create = this.create.bind(this);
+        this.updatedTask = this.updatedTask.bind(this);
     }
 
     create(newExpense) {
