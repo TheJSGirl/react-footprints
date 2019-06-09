@@ -10,7 +10,6 @@ class ExpenseList extends Component {
             expenses: [],
         }
         this.create = this.create.bind(this);
-        this.edit = this.edit.bind(this);
     }
 
     create(newExpense) {
@@ -24,19 +23,22 @@ class ExpenseList extends Component {
             expenses: this.state.expenses.filter(e => e.id !== id)
         })
     }
-    edit() {
-        this.setState({isEdiditng: true})
-        return (
-            <div>
-                <form>
-                    <input type="text"/>
-                </form>
-            </div>
-        )
+
+    updatedTask(id, updatedText) {
+        const updatedTexts = this.state.expenses.map((expense) => {
+            if(expense.id === id) {
+                return {...expense, text: updatedText}
+            }
+            return expense;
+        });
+        this.setState({ expenses: updatedTexts })
     }
+  
 
     render() {
-        const expenses = this.state.expenses && this.state.expenses.map(e =><Expense text={e.text} key={e.id} remove={() => this.remove(e.id)}/>)
+        const expenses = this.state.expenses && 
+        this.state.expenses.map(e =><Expense text={e.text} key={e.id} id={e.id} 
+            remove={() => this.remove(e.id)} updated={this.updatedTask}/>)
         return(
             <div className="ExpenseList">
                 <h2>All Expenses</h2>

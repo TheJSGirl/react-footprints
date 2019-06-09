@@ -14,7 +14,7 @@ class Expense extends Component {
             <div className="Expense">
            <p >{this.props.text}</p>
             <Remove remove={this.props.remove}/>
-           <Edit text={this.props.text}/>
+           <Edit text={this.props.text} id={this.props.id} updated= {this.props.updated}/>
          </div>
 
         )

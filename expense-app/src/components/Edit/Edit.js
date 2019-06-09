@@ -16,7 +16,6 @@ class Edit extends Component {
     }
 
     handleToggle() {
-        console.log(this.state.editedText)
         this.setState({isEditing: true})
     }
     handleChange(evt) {
@@ -26,6 +25,8 @@ class Edit extends Component {
 
     handleUpdate(evt) {
         evt.preventDefault();
+        this.props.updated(this.props.id, this.state.editedText)
+        this.setState({isEditing: false})
     }
 
 
@@ -34,7 +35,8 @@ class Edit extends Component {
         if(this.state.isEditing) {
             result = <div>
                 <form onSubmit={this.handleUpdate}>
-                     <input type="text" onChange={this.handleChange} value={this.state.editedText} name="editedText"/>
+                     <input type="text" onChange={this.handleChange} 
+                     value={this.state.editedText} name="editedText"/>
                      <button>Save</button>
                 </form>
             </div>
@@ -43,7 +45,6 @@ class Edit extends Component {
         result = <button  onClick={this.handleToggle} className="btn">Edit</button>
         }
         return result;
-
     }
     
 }
