@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Remove from './Delete';
+import Remove from '../Delete/Delete';
 import './Expense.css'
 
 class Expense extends Component {

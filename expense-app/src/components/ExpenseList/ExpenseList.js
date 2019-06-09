@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Expense from './Expense';
-import ExpenseForm from './Form';
+import Expense from '../Expense/Expense';
+import ExpenseForm from '../Form/Form';
 import './ExpenseList.css';
 
 class ExpenseList extends Component {

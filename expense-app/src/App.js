@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ExpenseList from './ExpenseList';
+import ExpenseList from './components/ExpenseList/ExpenseList';
 // import Expense from './Expense';
 
 function App() {
@@ -8,7 +8,6 @@ function App() {
     <div className="App">
       <h1>Add Your Expenses</h1>
       <ExpenseList/>
-
 
     </div>
   );
