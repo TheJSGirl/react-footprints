@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Remove from '../Delete/Delete';
 import Edit from '../Edit/Edit';
 import './Expense.css'
+import { connect } from 'react-redux';
+
 
 class Expense extends Component {
 
@@ -10,16 +12,17 @@ class Expense extends Component {
     }
 
     render() {
-        console.log("-------------", ...this.props)
+        const { text } = this.props.data[0];
         return (
             <div className="Expense">
-           <p >{this.props.text}</p>
-            <Remove remove={this.props.remove}/>
-           <Edit text={this.props.text} id={this.props.id} updated= {this.props.updated}/>
+           <p >{text}</p>
+            {/* <Remove remove={this.props.remove}/>
+           <Edit text={this.props.text} id={this.props.id} updated= {this.props.updated}/> */}
          </div>
 
         )
     }
 }
 
-export default Expense;
+
+export default connect(null)(Expense);

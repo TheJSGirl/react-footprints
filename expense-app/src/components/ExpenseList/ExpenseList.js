@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Expense from '../Expense/Expense';
+import { connect } from 'react-redux';
 import ExpenseForm from '../Form/Form';
 import './ExpenseList.css';
 
@@ -37,10 +38,10 @@ class ExpenseList extends Component {
   
 
     render() {
-        console.log("========", this.state.expenses)
-        const expenses = this.state.expenses && 
-        this.state.expenses.map(e =><Expense text={e.text} key={e.id} id={e.id} 
-            remove={() => this.remove(e.id)} updated={this.updatedTask}/>)
+        const expenses = this.props.list && 
+        this.props.list.map(e =><Expense data={{...e.expenses}} key={{...e.expenses.id }} id={{...e.expenses.id }}/>)
+        // remove={() => this.remove(e.id)} updated={this.updatedTask}
+        this.props.list.map(e => console.log("props---------", {...e.expenses}));
         return(
             <div className="ExpenseList">
                 <h2>All Expenses</h2>
@@ -51,4 +52,11 @@ class ExpenseList extends Component {
     }
 }
 
-export default ExpenseList;
+function mapStateToProps(state) {
+    return {
+        list: state.list
+    };
+  }
+
+// export default ExpenseList;
+export default connect(mapStateToProps)(ExpenseList);

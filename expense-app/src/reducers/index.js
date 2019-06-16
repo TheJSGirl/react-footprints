@@ -2,8 +2,8 @@ import * as constants from '../constants';
 
 
 export default (state=[], action) => {
-    console.log("state---", state);
-    console.log("actions", action);
+    console.log(state);
+    console.log(action.newExpense)
     switch(action.type) {
         case constants.CREATE_TEXT:
         return [
