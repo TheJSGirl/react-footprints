@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import uuid from 'uuid';
-
+import { create } from '../../actions/settings';
+import { connect } from 'react-redux';
 class Form extends Component {
 
     constructor(props) {
@@ -46,4 +47,4 @@ class Form extends Component {
     }
 }
 
-export default Form;
+export default connect(null, { create })(Form);

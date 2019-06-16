@@ -9,15 +9,15 @@ class ExpenseList extends Component {
         this.state = {
             expenses: [],
         }
-        this.create = this.create.bind(this);
+        // this.create = this.create.bind(this);
         this.updatedTask = this.updatedTask.bind(this);
     }
 
-    create(newExpense) {
-        this.setState({
-            expenses:[...this.state.expenses, newExpense]
-        });
-    }
+    // create(newExpense) {
+    //     this.setState({
+    //         expenses:[...this.state.expenses, newExpense]
+    //     });
+    // }
 
     remove(id) {
         this.setState({
@@ -37,6 +37,7 @@ class ExpenseList extends Component {
   
 
     render() {
+        console.log("========", this.state.expenses)
         const expenses = this.state.expenses && 
         this.state.expenses.map(e =><Expense text={e.text} key={e.id} id={e.id} 
             remove={() => this.remove(e.id)} updated={this.updatedTask}/>)
@@ -44,7 +45,7 @@ class ExpenseList extends Component {
             <div className="ExpenseList">
                 <h2>All Expenses</h2>
                 {expenses}
-                <ExpenseForm  create = {this.create}/>
+                <ExpenseForm />
             </div>
         )
     }
