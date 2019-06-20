@@ -1,9 +1,7 @@
 import * as constants from '../constants';
 
 
-export default (state=[], action) => {
-    console.log(state);
-    console.log(action.newExpense)
+export default (state=[], action) => {    
     switch(action.type) {
         case constants.CREATE_TEXT:
         return [
@@ -14,7 +12,11 @@ export default (state=[], action) => {
          ]}
 
         ]
-        default :
+        case constants.REMOVE_TEXT: 
+        return state.map((e) => {
+            return e.expenses.filter(expense => expense.id !== action.id)
+        })
+          default :
         return state
     }
 }

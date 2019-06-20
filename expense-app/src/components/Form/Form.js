@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import uuid from 'uuid';
 import { create } from '../../actions/settings';
 import { connect } from 'react-redux';

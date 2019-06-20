@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Remove from '../Delete/Delete';
 import Edit from '../Edit/Edit';
+import { remove } from '../../actions/settings';
+
 import './Expense.css'
 import { connect } from 'react-redux';
 
@@ -12,12 +14,13 @@ class Expense extends Component {
     }
 
     render() {
-        const { text } = this.props.data[0];
+        const { text, id } = this.props.data;
         return (
             <div className="Expense">
            <p >{text}</p>
-            {/* <Remove remove={this.props.remove}/>
-           <Edit text={this.props.text} id={this.props.id} updated= {this.props.updated}/> */}
+
+           <Remove id={id}/>
+           <Edit text={this.props.text} id={this.props.id} updated= {this.props.updated}/>
          </div>
 
         )
@@ -25,4 +28,4 @@ class Expense extends Component {
 }
 
 
-export default connect(null)(Expense);
+export default connect(null, {remove})(Expense);

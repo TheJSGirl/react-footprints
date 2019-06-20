@@ -7,3 +7,10 @@ export function create (newExpense) {
         newExpense
     }    
 }
+
+export function remove (id) {
+    return {
+        type: constants.REMOVE_TEXT,
+        id
+    }
+}

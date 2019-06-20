@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import uuid from 'uuid';
 import Expense from '../Expense/Expense';
 import { connect } from 'react-redux';
 import ExpenseForm from '../Form/Form';
@@ -14,18 +15,6 @@ class ExpenseList extends Component {
         this.updatedTask = this.updatedTask.bind(this);
     }
 
-    // create(newExpense) {
-    //     this.setState({
-    //         expenses:[...this.state.expenses, newExpense]
-    //     });
-    // }
-
-    remove(id) {
-        this.setState({
-            expenses: this.state.expenses.filter(e => e.id !== id)
-        })
-    }
-
     updatedTask(id, updatedText) {
         const updatedTexts = this.state.expenses.map((expense) => {
             if(expense.id === id) {
@@ -39,9 +28,12 @@ class ExpenseList extends Component {
 
     render() {
         const expenses = this.props.list && 
-        this.props.list.map(e =><Expense data={{...e.expenses}} key={{...e.expenses.id }} id={{...e.expenses.id }}/>)
-        // remove={() => this.remove(e.id)} updated={this.updatedTask}
-        this.props.list.map(e => console.log("props---------", {...e.expenses}));
+        this.props.list.map((e) =>{
+            const data ={ ...e.expenses};
+        return <Expense data={data} key={data.id}
+         id={data.id} updated={this.updatedTask}/>
+
+         });
         return(
             <div className="ExpenseList">
                 <h2>All Expenses</h2>
@@ -58,5 +50,5 @@ function mapStateToProps(state) {
     };
   }
 
-// export default ExpenseList;
+
 export default connect(mapStateToProps)(ExpenseList);
