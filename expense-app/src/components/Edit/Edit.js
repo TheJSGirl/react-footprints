@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import '../Delete/Delete.css';
+import {updatedTask} from '../../actions/settings';
 
 class Edit extends Component {
 
@@ -25,7 +27,7 @@ class Edit extends Component {
 
     handleUpdate(evt) {
         evt.preventDefault();
-        this.props.updated(this.props.id, this.state.editedText)
+        this.props.updatedTask(this.props.id, this.state.editedText)
         this.setState({isEditing: false})
     }
 
@@ -49,4 +51,4 @@ class Edit extends Component {
     
 }
 
-export default Edit;
+export default connect(null, {updatedTask})(Edit);

@@ -9,7 +9,7 @@ class Delete extends Component {
     render() {
         const { id } = this.props;
     return(
-        <button  onClick={() => this.props.remove(id)} className="btn"><i class="far fa-trash-alt">Delete</i></button>
+        <button  onClick={() => this.props.remove(id)} className="btn"><i className="far fa-trash-alt">Delete</i></button>
     )
     }
 }

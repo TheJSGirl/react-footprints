@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Remove from '../Delete/Delete';
 import Edit from '../Edit/Edit';
-import { remove } from '../../actions/settings';
+import { remove, updatedTask } from '../../actions/settings';
 
 import './Expense.css'
 import { connect } from 'react-redux';
@@ -20,7 +20,7 @@ class Expense extends Component {
            <p >{text}</p>
 
            <Remove id={id}/>
-           <Edit text={this.props.text} id={this.props.id} updated= {this.props.updated}/>
+           <Edit text={text} id={id}/>
          </div>
 
         )
@@ -28,4 +28,4 @@ class Expense extends Component {
 }
 
 
-export default connect(null, {remove})(Expense);
+export default connect(null, {remove, updatedTask})(Expense);

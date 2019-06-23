@@ -12,27 +12,25 @@ class ExpenseList extends Component {
             expenses: [],
         }
         // this.create = this.create.bind(this);
-        this.updatedTask = this.updatedTask.bind(this);
+        // this.updatedTask = this.updatedTask.bind(this);
     }
 
-    updatedTask(id, updatedText) {
-        const updatedTexts = this.state.expenses.map((expense) => {
-            if(expense.id === id) {
-                return {...expense, text: updatedText}
-            }
-            return expense;
-        });
-        this.setState({ expenses: updatedTexts })
-    }
+    // updatedTask(id, updatedText) {
+    //     const updatedTexts = this.state.expenses.map((expense) => {
+    //         if(expense.id === id) {
+    //             return {...expense, text: updatedText}
+    //         }
+    //         return expense;
+    //     });
+    //     this.setState({ expenses: updatedTexts })
+    // }
   
 
     render() {
-        const expenses = this.props.list && 
-        this.props.list.map((e) =>{
-            const data ={ ...e.expenses};
-        return <Expense data={data} key={data.id}
-         id={data.id} updated={this.updatedTask}/>
-
+        const expenses = this.props.data.expenses && 
+        this.props.data.expenses.map((e) =>{
+        return <Expense data={e} key={e.id}
+         id={e.id}/>
          });
         return(
             <div className="ExpenseList">
@@ -45,9 +43,7 @@ class ExpenseList extends Component {
 }
 
 function mapStateToProps(state) {
-    return {
-        list: state.list
-    };
+    return state;
   }
 
 

@@ -14,3 +14,11 @@ export function remove (id) {
         id
     }
 }
+
+export function updatedTask(id, text) {
+    return {
+        type: constants.UPDATE_TEXT,
+        id,
+        text
+    }
+}
