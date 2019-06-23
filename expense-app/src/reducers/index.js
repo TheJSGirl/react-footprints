@@ -17,31 +17,17 @@ export default (state=iniitialState, action) => {
             expenses: state.expenses.filter(expense => expense.id !== action.id)
         }
 
-        // case constants.UPDATE_TEXT: 
-        //     return state.map((e) => {
-        //         e.expenses.map((expense) => {
-        //             if(expense.id === action.id) {
-        //                 return {...expense, text: action.text}
-        //             }
-        //             return expense;
-        //         })
-        //         // this.setState({expenses: action.text});
-        //     })
         case constants.UPDATE_TEXT: 
-            return [
+            return {
                 ...state,
-                {
-                    expenses: state.map((e) => {
-                                e.expenses.map((expense) => {
-                                    if(expense.id === action.id) {
-                                        return {...expense, text: action.text}
+                    expenses: state.expenses.map((e) => {
+                            if(e.id === action.id) {
+                                        return { id: e.id, text: action.text}
                                     }
-                                    return expense;
-                                })
-                                // this.setState({expenses: action.text});
+                                    return e;                                
                             })
-                }
-            ]
+                
+                    }
           default :
         return state
     }

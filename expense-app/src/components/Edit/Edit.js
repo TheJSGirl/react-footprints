@@ -38,7 +38,7 @@ class Edit extends Component {
             result = <div>
                 <form onSubmit={this.handleUpdate}>
                      <input type="text" onChange={this.handleChange} 
-                     value={this.state.editedText} name="editedText"/>
+                     value={this.state.editedText} name="editedText" required="true"/>
                      <button>Save</button>
                 </form>
             </div>
