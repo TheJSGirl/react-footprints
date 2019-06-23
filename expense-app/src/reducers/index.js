@@ -12,12 +12,10 @@ export default (state=iniitialState, action) => {
               };
         
         case constants.REMOVE_TEXT: 
-        return [
+        return {
             ...state,
-          {   expenses: state.map(({ expenses }) => {
-                return expenses;
-            })}
-        ]
+            expenses: state.expenses.filter(expense => expense.id !== action.id)
+        }
 
         // case constants.UPDATE_TEXT: 
         //     return state.map((e) => {
