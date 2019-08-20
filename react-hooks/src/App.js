@@ -14,8 +14,6 @@ function App() {
       <Toggler />
       <Clicker />
       <ShowMovies />
-      <Form />
-      <CustomForm />
     </div>
   );
 }
