@@ -4,6 +4,8 @@ import Counter from './components/counter';
 import Toggler from './components/toggler';
 import Clicker from './components/clicker';
 import ShowMovies from './components/showMovies';
+import Form from './components/form';
+import CustomForm from './components/customForm';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Toggler />
       <Clicker />
       <ShowMovies />
+      <Form />
+      <CustomForm />
     </div>
   );
 }
