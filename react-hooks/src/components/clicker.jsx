@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 /**
  * useEffect renders after every renders method
+ * useEffect can be multiple in the same function for different multiple tasks
  */
 
 function Clicker() {
