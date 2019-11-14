@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar/SearchBar';
-import axios from 'axios';
+import ImageList from './components/ImageList/ImageList';
 import unsplash from './api/unsplash';
+
 
 function App(props) {
   const [image, addImages] = useState([]);
@@ -17,7 +18,7 @@ function App(props) {
   return (
     <div className="ui container" style={{marginTop:"10px"}}>
       <SearchBar onSearchTerm={onSearchTerm} />
-      Found: {image.length} images
+      <ImageList images={image} />
     </div>
   );
 }
