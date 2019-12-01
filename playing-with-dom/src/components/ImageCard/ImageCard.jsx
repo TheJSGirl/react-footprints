@@ -1,14 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './ImageCard.css';
 
-const ImageCard = (props) => {
-
-    return (
-        <div>
-            <img className="image" alt={props.image.decription} src={props.image.urls.regular} />
-        </div>
-        )
-
+class ImageCard extends Component {
+    
+     render() {
+         const {description, urls} = this.props.image;
+        return (
+            <div>
+                <img className="image" alt={description}
+                src={urls.regular}
+                />
+            </div>
+        );
+    }
 }
 
 export default ImageCard;
