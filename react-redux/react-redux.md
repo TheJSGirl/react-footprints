@@ -1,6 +1,8 @@
 ### React Redux
 #### In this folder I am brushing the concepts of react-redux and it's pattern
 
+- Here using react-boilerplate for react-redux setup
+
 Why we use containers and component in react-redux?
 
 In react-redux we usually divideds component in two categories
