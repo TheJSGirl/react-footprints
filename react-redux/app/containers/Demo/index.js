@@ -3,12 +3,30 @@
  *
  * List all the features
  */
-import React from 'react';
+import React, { Component } from 'react';
+import { Field, reduxForm } from 'redux-form';
 
-export default function FeaturePage() {
-  return (
-    <div>
-      <p>hsgsh hsgshgs gshgshs hgshsg ghsgs</p>
-    </div>
-  );
+class DemoPage extends Component {
+  renderInput(formProps) {
+    // return (
+    //   <input
+    //     onChange={formProps.input.onChange}
+    //     value={formProps.input.value}
+    //   />
+    // );
+    return <input {...formProps.input} />;
+  }
+
+  render() {
+    return (
+      <form>
+        <Field name="title" component={this.renderInput} />
+        <Field name="description" component={this.renderInput} />
+      </form>
+    );
+  }
 }
+
+export default reduxForm({
+  form: 'DemoForm',
+})(DemoPage);
