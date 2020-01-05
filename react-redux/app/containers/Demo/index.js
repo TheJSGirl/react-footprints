@@ -14,14 +14,23 @@ class DemoPage extends Component {
     //     value={formProps.input.value}
     //   />
     // );
-    return <input {...formProps.input} />;
+    return (
+      <div>
+        <label>{formProps.label}</label>
+        <input {...formProps.input} />
+      </div>
+    );
   }
 
   render() {
     return (
       <form>
-        <Field name="title" component={this.renderInput} />
-        <Field name="description" component={this.renderInput} />
+        <Field name="title" component={this.renderInput} label="Enter title" />
+        <Field
+          name="description"
+          component={this.renderInput}
+          label="Enter description"
+        />
       </form>
     );
   }
